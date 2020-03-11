@@ -1,0 +1,45 @@
+{
+    "app": {
+      "key": "FGHJKLOIUYTgbnmkasudfasdfa567895315asdfasdfadsf", 
+      "username": "admin",
+      "password": "admin888" 
+    },
+    "db": {
+      "host": "127.0.0.1:27017",  
+      "dbname": "noxue",
+      "username": "noxue",  
+      "password": "noxue"
+    },
+    "server": {
+      "port": 80  
+    },
+    "translate": {
+      "baidu": {
+        "id": "20181012000218535",     
+        "key": "******************" 
+      }
+    },
+    "upload": {
+      "qiniu": {
+        "id": "**********",  
+        "key": "**************",
+        "bucket": "*****",
+        "callback":"http://api.noxue.com/api/v1/upload/callback"  
+      },
+      "types": {
+        "article": { 
+          "prefix": "article", 
+          "allow": [  
+            "png",
+            "jpg",
+            "jpeg",
+            "gif",
+            "zip",
+            "rar",
+            "7z"
+          ],
+          "size": 10  
+        }
+      }
+    }
+  }
