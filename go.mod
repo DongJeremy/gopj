@@ -28,10 +28,10 @@ require (
 	github.com/sirupsen/logrus v1.4.2
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/tidwall/gjson v1.6.0
-	golang.org/x/crypto v0.0.0-20191205180655-e7c4368fe9dd
+	golang.org/x/crypto v0.0.0-20200302210943-78000ba7a073
 	golang.org/x/text v0.3.2
-	gopkg.in/go-playground/validator.v9 v9.29.1
-	gopkg.in/ini.v1 v1.52.0
+	gopkg.in/go-playground/validator.v9 v9.31.0
+	gopkg.in/ini.v1 v1.54.0
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	qiniupkg.com/x v7.0.8+incompatible // indirect
 )
