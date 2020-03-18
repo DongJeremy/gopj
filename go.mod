@@ -19,6 +19,7 @@ require (
 	github.com/jinzhu/gorm v1.9.12
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/kr/pretty v0.2.0 // indirect
+	github.com/krolaw/dhcp4 v0.0.0-20190909130307-a50d88189771
 	github.com/mattn/go-colorable v0.1.6
 	github.com/mattn/go-oci8 v0.0.4
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible

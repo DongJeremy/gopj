@@ -1,13 +1,10 @@
 package pxecore
 
 import (
-	"fmt"
 	"io/ioutil"
 
 	"gopkg.in/yaml.v2"
 )
-
-var conf Config
 
 // Config config for pxe
 type Config struct {
@@ -19,21 +16,22 @@ type Config struct {
 // HTTP config
 type HTTP struct {
 	// which ip address that http server listening
-	HTTPIP    string `yaml:"listen_ip,omitempty"`
-	HTTPPort  string `yaml:"listen_port,omitempty"` // listening port of http server
+	IP        string `yaml:"listen_ip,omitempty"`
+	Port      string `yaml:"listen_port,omitempty"` // listening port of http server
 	MountPath string `yaml:"mount_path,omitempty"`  // http file server path
 }
 
 // TFTP config
 type TFTP struct {
-	TftpPath string `yaml:"mount_path,omitempty"` // tftp_files server path
-	TftpIP   string `yaml:"listen_ip,omitempty"`  // ip address that tftp_files server listening on
+	Path string `yaml:"mount_path,omitempty"`  // tftp_files server path
+	IP   string `yaml:"listen_ip,omitempty"`   // ip address that tftp_files server listening on
+	Port string `yaml:"listen_port,omitempty"` // listening port of tfpt server
 }
 
 // DHCP config
 type DHCP struct {
-	ListenIP   string `yaml:"listen_ip,omitempty"` // which ip address that dhcp server was listening on
-	ListenPort string `yaml:"listen_port,omitempty"`
+	IP         string `yaml:"listen_ip,omitempty"` // which ip address that dhcp server was listening on
+	Port       string `yaml:"listen_port,omitempty"`
 	TftpServer string `yaml:"tftp_server,omitempty"`
 	StartIP    string `yaml:"start_ip"`
 	Range      int    `yaml:"lease_range"`       // lease ip address count
@@ -41,33 +39,29 @@ type DHCP struct {
 	PxeFile    string `yaml:"pxe_file"`          // pxe file name
 }
 
-// Refresh runtime configurations
-func Refresh() {
+// GetConf return runtime configurations
+func GetConf(filename string) Config {
 	c := new(Config)
 	// set default options
-	c.HTTP.HTTPIP = "0.0.0.0"
-	c.HTTP.HTTPPort = "80"
+	c.HTTP.IP = "0.0.0.0"
+	c.HTTP.Port = "80"
 	c.HTTP.MountPath = "/mnt/dhtp/http"
-	c.TFTP.TftpIP = "0.0.0.0"
-	c.TFTP.TftpPath = "/mnt/dhtp/tftp"
-	c.DHCP.ListenIP = "0.0.0.0"
-	c.DHCP.ListenPort = "67"
-	c.DHCP.StartIP = "169.169.181.2"
-	c.DHCP.Range = 50
+	c.TFTP.IP = "0.0.0.0"
+	c.TFTP.Path = "/mnt/dhtp/tftp"
+	c.TFTP.Port = "69"
+	c.DHCP.IP = "0.0.0.0"
+	c.DHCP.Port = "67"
+	c.DHCP.StartIP = "192.168.1.201"
+	c.DHCP.Range = 10
 	c.DHCP.PxeFile = "pxelinux.0"
 	c.DHCP.NetMask = "255.255.255.0"
-	f, err := ioutil.ReadFile("/etc/dhtp/dhtp.yml")
+	f, err := ioutil.ReadFile(filename)
 	if err != nil {
-		panic(fmt.Sprintf("read config file from /etc/dhtp/dhtp.conf failed, %s", err))
+		log.Errorf("read config file from %s failed, %s", filename, err)
 	}
 	err = yaml.Unmarshal(f, c)
 	if err != nil {
-		panic(fmt.Sprintf("parse config file failed, %s", err))
+		log.Errorf("parse config file failed, %s", err)
 	}
-	conf = *c
-}
-
-// GetConf return runtime configurations
-func GetConf() Config {
-	return conf
+	return *c
 }
