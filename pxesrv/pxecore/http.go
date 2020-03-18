@@ -8,8 +8,8 @@ import (
 
 func (s *Server) serveHTTP(l net.Listener) error {
 	listen := net.JoinHostPort(s.Config.HTTP.IP, s.Config.HTTP.Port)
-	http.Handle("/", http.FileServer(http.Dir(s.Config.HTTP.MountPath)))
-	log.Printf("starting http server %s and handle on path: %s", listen, s.Config.HTTP.MountPath)
+	http.Handle("/", http.FileServer(http.Dir(s.Config.HTTP.RootPath)))
+	log.Printf("starting http server %s and handle on path: %s", listen, s.Config.HTTP.RootPath)
 
 	httpServer := &http.Server{
 		Addr:           s.Config.HTTP.Port, // 监听的地址和端口

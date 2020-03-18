@@ -16,14 +16,14 @@ type Config struct {
 // HTTP config
 type HTTP struct {
 	// which ip address that http server listening
-	IP        string `yaml:"listen_ip,omitempty"`
-	Port      string `yaml:"listen_port,omitempty"` // listening port of http server
-	MountPath string `yaml:"mount_path,omitempty"`  // http file server path
+	IP       string `yaml:"listen_ip,omitempty"`
+	Port     string `yaml:"listen_port,omitempty"` // listening port of http server
+	RootPath string `yaml:"rootpath,omitempty"`    // http file server path
 }
 
 // TFTP config
 type TFTP struct {
-	Path string `yaml:"mount_path,omitempty"`  // tftp_files server path
+	Root string `yaml:"tftp_root,omitempty"`   // tftp_files server path
 	IP   string `yaml:"listen_ip,omitempty"`   // ip address that tftp_files server listening on
 	Port string `yaml:"listen_port,omitempty"` // listening port of tfpt server
 }
@@ -36,7 +36,9 @@ type DHCP struct {
 	StartIP    string `yaml:"start_ip"`
 	Range      int    `yaml:"lease_range"`       // lease ip address count
 	NetMask    string `yaml:"netmask,omitempty"` // default /24
-	PxeFile    string `yaml:"pxe_file"`          // pxe file name
+	Router     string `yaml:"router,omitempty"`
+	DNSServer  string `yaml:"dns_server,omitempty"`
+	PxeFile    string `yaml:"pxe_file"` // pxe file name
 }
 
 // GetConf return runtime configurations
@@ -45,9 +47,9 @@ func GetConf(filename string) Config {
 	// set default options
 	c.HTTP.IP = "0.0.0.0"
 	c.HTTP.Port = "80"
-	c.HTTP.MountPath = "/mnt/dhtp/http"
+	c.HTTP.RootPath = "/mnt/dhtp/http"
 	c.TFTP.IP = "0.0.0.0"
-	c.TFTP.Path = "/mnt/dhtp/tftp"
+	c.TFTP.Root = "/mnt/dhtp/tftp"
 	c.TFTP.Port = "69"
 	c.DHCP.IP = "0.0.0.0"
 	c.DHCP.Port = "67"

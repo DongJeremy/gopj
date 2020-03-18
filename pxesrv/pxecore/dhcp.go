@@ -23,13 +23,11 @@ func (s *Server) serveDHCP(conn dhcp.ServeConn) error {
 		leaseRange:    s.Config.DHCP.Range,
 		leases:        make(map[int]lease, 200),
 		options: dhcp.Options{
-			//dhcp.OptionSubnetMask:       []byte(net.ParseIP(c.Dhcp.NetMask)),
-			dhcp.OptionSubnetMask: net.ParseIP(s.Config.DHCP.NetMask).To4(),
-			//dhcp.OptionRouter:           []byte(serverIP), // Presuming Server is also your router
-			//dhcp.OptionRouter: []byte{192, 168, 181, 134}, // Presuming Server is also your router
-			//dhcp.OptionDomainNameServer: []byte(serverIP), // Presuming Server is also your DNS server
-			//dhcp.OptionTFTPServerName:   []byte(c.Dhcp.TftpServer), // tftp_files server address
-			dhcp.OptionBootFileName: []byte(s.Config.DHCP.PxeFile), // set boot filename option
+			dhcp.OptionSubnetMask:       net.ParseIP(s.Config.DHCP.NetMask).To4(),
+			dhcp.OptionRouter:           []byte(s.Config.DHCP.Router),
+			dhcp.OptionDomainNameServer: []byte(s.Config.DHCP.DNSServer),  // Presuming Server is also your DNS server
+			dhcp.OptionTFTPServerName:   []byte(s.Config.DHCP.TftpServer), // tftp_files server address
+			dhcp.OptionBootFileName:     []byte(s.Config.DHCP.PxeFile),    // set boot filename option
 		},
 	}
 	log.Printf("starting dhcp server and linstening on %s:%s", s.Config.DHCP.IP, s.Config.DHCP.Port)
