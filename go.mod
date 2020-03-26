@@ -22,6 +22,7 @@ require (
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
 	github.com/noxue/locales v0.12.1
 	github.com/noxue/validator v9.21.0+incompatible
+	github.com/olekukonko/tablewriter v0.0.4
 	github.com/qiniu/api.v7 v7.2.5+incompatible
 	github.com/qiniu/x v7.0.8+incompatible // indirect
 	github.com/satori/go.uuid v1.2.0

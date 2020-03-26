@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/spf13/cobra/cobra/cmd"
+	"github.com/DongJeremy/gopj/hostctl/cmd"
 )
 
 func main() {
