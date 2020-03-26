@@ -3,7 +3,7 @@ package dao
 import (
 	"time"
 
-	"github.com/davidddw/gopj/gocms/app/domain"
+	"github.com/DongJeremy/gopj/gocms/app/domain"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )

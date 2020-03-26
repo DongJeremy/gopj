@@ -3,7 +3,7 @@ package utils
 import (
 	"log"
 
-	"github.com/davidddw/gopj/gocms/app/conf"
+	"github.com/DongJeremy/gopj/gocms/app/conf"
 	"github.com/gin-gonic/gin"
 
 	ut "github.com/go-playground/universal-translator"

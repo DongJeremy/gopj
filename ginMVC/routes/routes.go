@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/davidddw/gopj/ginMvc/controllers"
+	"github.com/DongJeremy/gopj/ginMvc/controllers"
 	"github.com/gin-gonic/gin"
 	"github.com/go-xorm/xorm"
 )

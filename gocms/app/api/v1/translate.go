@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/davidddw/gopj/gocms/app/conf"
+	"github.com/DongJeremy/gopj/gocms/app/conf"
 	"github.com/gin-gonic/gin"
 )
 

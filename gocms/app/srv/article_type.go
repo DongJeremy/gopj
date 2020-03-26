@@ -1,8 +1,8 @@
 package srv
 
 import (
-	"github.com/davidddw/gopj/gocms/app/dao"
-	"github.com/davidddw/gopj/gocms/app/domain"
+	"github.com/DongJeremy/gopj/gocms/app/dao"
+	"github.com/DongJeremy/gopj/gocms/app/domain"
 )
 
 type ArticleTypeSrv struct {

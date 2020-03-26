@@ -4,7 +4,7 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
-	"github.com/davidddw/gopj/gocms/app/domain"
+	"github.com/DongJeremy/gopj/gocms/app/domain"
 )
 
 type ArticleDao struct {

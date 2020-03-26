@@ -9,9 +9,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/davidddw/gopj/sorter/algorithms/bubblesort"
-	"github.com/davidddw/gopj/sorter/algorithms/qsort"
-	"github.com/davidddw/gopj/sorter/algorithms/selectionsort"
+	"github.com/DongJeremy/gopj/sorter/algorithms/bubblesort"
+	"github.com/DongJeremy/gopj/sorter/algorithms/qsort"
+	"github.com/DongJeremy/gopj/sorter/algorithms/selectionsort"
 )
 
 var infile *string = flag.String("i", "infile", "File contains values for sorting")

@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/davidddw/gopj/gocms/app/conf"
-	"github.com/davidddw/gopj/gocms/app/dao"
-	"github.com/davidddw/gopj/gocms/app/utils"
+	"github.com/DongJeremy/gopj/gocms/app/conf"
+	"github.com/DongJeremy/gopj/gocms/app/dao"
+	"github.com/DongJeremy/gopj/gocms/app/utils"
 
 	"github.com/gin-gonic/gin"
 	"github.com/qiniu/api.v7/storage"

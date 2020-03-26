@@ -3,7 +3,7 @@ package dao
 import (
 	"log"
 
-	"github.com/davidddw/gopj/gocms/app/conf"
+	"github.com/DongJeremy/gopj/gocms/app/conf"
 	"gopkg.in/mgo.v2"
 )
 

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/davidddw/gopj/ginMVC/configs"
-	"github.com/davidddw/gopj/ginMvc/drivers"
-	"github.com/davidddw/gopj/ginMvc/server"
+	"github.com/DongJeremy/gopj/ginMVC/configs"
+	"github.com/DongJeremy/gopj/ginMVC/drivers"
+	"github.com/DongJeremy/gopj/ginMVC/server"
 	"github.com/gin-gonic/gin"
 	"github.com/go-xorm/xorm"
 )

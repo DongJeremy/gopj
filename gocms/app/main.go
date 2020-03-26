@@ -9,8 +9,8 @@ import (
 
 	jwt "github.com/appleboy/gin-jwt/v2"
 
-	v1 "github.com/davidddw/gopj/gocms/app/api/v1"
-	"github.com/davidddw/gopj/gocms/app/conf"
+	v1 "github.com/DongJeremy/gopj/gocms/app/api/v1"
+	"github.com/DongJeremy/gopj/gocms/app/conf"
 	"github.com/gin-gonic/gin"
 )
 

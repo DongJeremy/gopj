@@ -4,10 +4,10 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/davidddw/gopj/gocms/app/dao"
-	"github.com/davidddw/gopj/gocms/app/domain"
-	"github.com/davidddw/gopj/gocms/app/srv"
-	"github.com/davidddw/gopj/gocms/app/utils"
+	"github.com/DongJeremy/gopj/gocms/app/dao"
+	"github.com/DongJeremy/gopj/gocms/app/domain"
+	"github.com/DongJeremy/gopj/gocms/app/srv"
+	"github.com/DongJeremy/gopj/gocms/app/utils"
 	"github.com/gin-gonic/gin"
 	"gopkg.in/mgo.v2/bson"
 )

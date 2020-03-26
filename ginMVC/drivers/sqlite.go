@@ -1,7 +1,7 @@
 package drivers
 
 import (
-	"github.com/davidddw/gopj/ginMVC/configs"
+	"github.com/DongJeremy/gopj/ginMVC/configs"
 	"github.com/go-xorm/xorm"
 	_ "github.com/mattn/go-sqlite3"
 )
