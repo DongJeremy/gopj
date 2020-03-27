@@ -3,7 +3,7 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/DongJeremy/gopj/hostctl/host"
+	"github.com/DongJeremy/gopj/hostctl/hosts"
 )
 
 // listCmd represents the list command
@@ -20,8 +20,11 @@ The "default"" profile is all the content that is not handled by hostctl tool.
 		profile, _ := cmd.Flags().GetString("profile")
 
 		src, _ := cmd.Flags().GetString("host-file")
-
-		err := host.ListProfiles(src, &host.ListOptions{
+		hostFile, err := hosts.ParseFile(src, true)
+		if err != nil {
+			return err
+		}
+		err = hostFile.ListProfiles(&hosts.ListOptions{
 			Profile: profile,
 		})
 
